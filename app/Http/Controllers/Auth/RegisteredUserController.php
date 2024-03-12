@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Models\SForcePolicy;
+use Log;
 
 class RegisteredUserController extends Controller
 {
@@ -35,11 +37,18 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+        /*
+        $policyData = [
+            'Name' => $request->name,
+        ];
+        $upsertResult = SForcePolicy::upsert($request->email, $policyData);
+        */
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            //'salesforce_id' => $upsertResult->id,
         ]);
 
         event(new Registered($user));

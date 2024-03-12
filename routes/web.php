@@ -15,7 +15,7 @@ use App\Http\Controllers\WebsiteController;
 */
 
 Route::get('/', [WebsiteController::class, 'home']);
-
+Route::get('/test', [WebsiteController::class, 'fetchPolicy']);
 
 /* Login stuff */
 
