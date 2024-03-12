@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\SForcePolicy;
+use Log;
 
 class WebsiteController extends Controller
 {
@@ -15,9 +16,9 @@ class WebsiteController extends Controller
         return view('website.home.index');
     }
 
-    public function fetchPolicy(Request $req)
+    public function fetch(Request $req)
     {
-
-
+        $policyHolder = SForcePolicy::fetchWithCertificates();
+        Log::info(print_r($policyHolder, true));
     }
 }

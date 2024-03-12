@@ -10,9 +10,9 @@ use \Session;
 use GuzzleHttp\Exception\BadResponseException;
 use Log;
 
-class SForcePolicy
+class SForceCertificate
 {
-    public static function fetch($id)
+    public static function fetchByID($id)
     {
         SForceAuth::prod();
         try {
@@ -20,7 +20,7 @@ class SForcePolicy
                 'base_uri' => 'https://americasrvwarranty.my.salesforce.com',
                 'verify' => false
                 ]);
-            $response = $client->get('services/data/v51.0/sobjects/Bed_Bug_Policies__c/' . $id, [
+            $response = $client->get('services/data/v51.0/sobjects/Bed_Bug_Certificate__c/' . $id, [
                 RequestOptions::HEADERS => [
                     'Authorization' => 'Bearer ' . Cache::get('sfToken'),
                     'X-PrettyPrint' => 1,
@@ -36,13 +36,10 @@ class SForcePolicy
         } 
     }
 
-    // Fetches currently logged in user from salesforce along with 200 (capped) certificates belonging to them
-    public static function fetchWithCertificates()
+    public static function fetchAllByPolicyHolder($policyHolderID)
     {
-        $id = 'a1X4x00000i1soV';
         SForceAuth::prod();
-            //$q = "select+fields(all)+(select+fields(all)+fromBed_Bug_Certificates__r+limit+100)+from+Bed_Bug_Policies__c+where+id+='" . Auth::user()->salesforce_id . "'+limit+1";
-            $q = "select+fields(all)+,+(select+fields(all)+from+Bed_Bug_Certificates__r+limit+200)+from+Bed_Bug_Policies__c+where+id+='" . $id . "'+limit+1";
+            $q = "select+fields(all)+from+Bed_Bug_Certificate__c+where+Property_Management_Co__c+='" . $policyHolderID . "'+limit+100";
 
         try {
             $client = new Client([
@@ -56,26 +53,14 @@ class SForcePolicy
                 ],
             ]);
             $result = json_decode($response->getBody()->getContents());
-
-            // Checking if user has any certificates, change the name of the property to something more clear
             if (is_object($result) && $result->totalSize > 0)
-            {
-                $policyHolder = $result->records[0];
-                if (property_exists($policyHolder, 'Bed_Bug_Certificates__r') && $policyHolder->Bed_Bug_Certificates__r == null)
-                    $policyHolder->certificates = [];
-                else
-                {
-                    $policyHolder->certificates = $policyHolder->Bed_Bug_Certificates__r->records;
-                    unset($policyHolder->Bed_Bug_Certificates__r);
-                }
-
-                return $policyHolder;
-            }
+                return $result->records;
             else
                 return null;
         } catch (BadResponseException $e) {
             $response = $e->getResponse();
             $responseBodyAsString = $response->getBody()->getContents();
+            Log::info('No matching email found for ' . $email);
             Log::critical($responseBodyAsString);
             return null;
         } 
