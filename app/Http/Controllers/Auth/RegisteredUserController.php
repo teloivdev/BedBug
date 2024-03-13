@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
         $policyData = [
             'Name' => $request->name,
         ];
-        $upsertResult = SForcePolicy::upsert($request->email, $policyData);
+        $upsertResult = SForcePolicy::upsertByEmail($request->email, $policyData);
         
 
         $user = User::create([
