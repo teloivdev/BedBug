@@ -29,31 +29,6 @@
             </div>
         </div>
     </div>
-    <div class="container pt-5 pb-5">
-        <div class="row pt-4 pb-5">
-            <div class="col-md col-12">
-                <h2 class="fs-1 text-center fw-bold">How To:</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md col-12 pt-2 pb-2">
-                <h3 class="fw-bold">Create A Login</h3>
-                <p class="fs-5">Create a account in for your own portal login, to manage your policy and certificates</p>
-            </div>
-            <div class="col-md col-12 pt-2 pb-2">
-                <h3 class="fw-bold">Generate A Policy</h3>
-                <p class="fs-5">Once you are logged into your portal, fill out all the information that is shown to create your policy for Bed Bug Coverage</p>
-            </div>
-            <div class="col-md col-12 pt-2 pb-2">
-                <h3 class="fw-bold">Implement a Certificate</h3>
-                <p class="fs-5">Once your policy is created you then can register any property you manage to have coverage as long as you have an completed inspection report of location.</p>
-            </div>
-        </div>
-        <div class="row pt-3 pb-3">
-            <div class="col-md col-12 text-center">
-                <a class="btn btn-primary btn-lg" href="">Register / Login</a>
-            </div>
-        </div>
-    </div>
+    
 </body>
 @include('layouts.webFooter')
