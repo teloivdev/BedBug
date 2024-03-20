@@ -1,7 +1,6 @@
 body {
     color: black;
     font-family: Georgia, serif;
-
 }
 
 #mainButtons {
@@ -19,7 +18,83 @@ body {
     padding-top: 2%;
     padding-bottom: 2%;
     background-color: #e4e4e4;
+    overlay: #d6d6d6;
     box-shadow: inset 0 0 0 3000px #00000091;
+    font-family: Georgia, serif;
+}
+
+#aboutUsHeader {
+    background-image: url("/images/AdobeStock_524627948.jpeg");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-color: #e4e4e4;
+    overlay: #d6d6d6;
+    box-shadow: inset 0 0 0 3000px #00000091;
+    font-family: Georgia, serif;
+}
+
+#ownerHeader {
+    background-image: url("/images/AdobeStock_334459703.jpeg");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30% 30%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-color: #e4e4e4;
+    overlay: #d6d6d6;
+    box-shadow: inset 0 0 0 3000px #00000091;
+    font-family: Georgia, serif;
+}
+
+#managerHeader {
+    background-image: url("/images/AdobeStock_425690717.jpeg");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-color: #e4e4e4;
+    overlay: #d6d6d6;
+    box-shadow: inset 0 0 0 3000px #00000091;
+    font-family: Georgia, serif;
+}
+
+#bbInfoHeader {
+    background-image: url("/images/AdobeStock_362847336.jpeg");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    padding-top: 12%;
+    padding-bottom: 2%;
+    background-color: #e4e4e4;
+    overlay: #d6d6d6;
+    box-shadow: inset 0 0 0 3000px #00000091;
+    font-family: Georgia, serif;
+}
+
+#bbInfoMid {
+    background-image: url("/images/AdobeStock_415738150.jpeg");
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #eeeeee;
+    box-shadow: inset 0 0 0 3000px #fcfcfc91;
+    font-family: Georgia, serif;
 }
 @charset "UTF-8";
 /*!
@@ -94,7 +169,7 @@ body {
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: "Nunito", sans-serif;
+  --bs-font-sans-serif: "Georgia", serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
