@@ -35,7 +35,7 @@
                     </ul>
                     </div>
                     <div class="col-md-2 col-12 text-end">
-                        <a class="btn btn-outline-primary btn-lg" href="">Portal Login</a>
+                        <a class="btn btn-outline-primary btn-lg" href="{{ route('login') }}">Portal Login</a>
                     </div>
                 </div>
             </div>

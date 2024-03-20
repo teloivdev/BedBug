@@ -45,10 +45,6 @@ Route::get('/fetch', [WebsiteController::class, 'fetch']);
 Route::middleware(['auth'])->group(function () {
     Route::get('loginRedirect', [AdminController::class, 'loginRedirect'])->name('loginRedirect');
 
-<<<<<<< HEAD
-
-Route::get('/dashboard', [AccountController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-=======
     Route::middleware(['role:admin'])->group(function () {
         Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('account.admin.dashboard');
         Route::get('admin/policies', [AdminController::class, 'activePolicies'])->name('account.admin.policies');
@@ -60,7 +56,6 @@ Route::get('/dashboard', [AccountController::class, 'dashboard'])->middleware(['
 
     });
 });
->>>>>>> f58a7d09695a4ac0b9c01d73dd4e90919b8e45fe
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

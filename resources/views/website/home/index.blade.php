@@ -15,7 +15,7 @@
                     <div class="row d-flex justify-content-center pt-5 pb-4">
                         <div class="col-12 text-center">
                             <div class="d-grid gap-2 col-2 mx-auto">
-                            <button class="btn btn-outline-primary btn-lg bg-primary text-white" role="button" type="button">Get Covered</button>
+                            <a href="{{ route('register') }}" class="btn btn-outline-primary btn-lg bg-primary text-white" role="button" type="button">Get Covered</a>
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                     </p>
                                     <div class="row pt-4">
                                         <div class="col-md col-12 text-center">
-                                            <a href="#" class="btn btn-primary btn-lg text-white">Get Covered</a>
+                                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg text-white">Get Covered</a>
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                     </p>
                                     <div class="row pt-4">
                                         <div class="col-md col-12 text-center">
-                                            <a href="#" class="btn btn-primary btn-lg text-white">Get Covered</a>
+                                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg text-white">Get Covered</a>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                                     </p>
                                     <div class="row pt-4">
                                         <div class="col-md col-12 text-center">
-                                            <a href="#" class="btn btn-primary btn-lg text-white">Get Covered</a>
+                                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg text-white">Get Covered</a>
                                         </div>
                                     </div>
                                 </div>
@@ -180,7 +180,7 @@
                                     </p>
                                     <div class="row pt-4">
                                         <div class="col-md col-12 text-center">
-                                            <a href="#" class="btn btn-primary btn-lg text-white">Get Covered</a>
+                                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg text-white">Get Covered</a>
                                         </div>
                                     </div>
                                 </div>
@@ -203,7 +203,7 @@
                                     </p>
                                     <div class="row pt-4">
                                         <div class="col-md col-12 text-center">
-                                            <a href="#" class="btn btn-primary btn-lg text-white">Get Covered</a>
+                                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg text-white">Get Covered</a>
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +226,7 @@
                                     </p>
                                     <div class="row pt-4">
                                         <div class="col-md col-12 text-center">
-                                            <a href="#" class="btn btn-primary btn-lg text-white">Get Covered</a>
+                                            <a href="{{ route('register') }}" class="btn btn-primary btn-lg text-white">Get Covered</a>
                                         </div>
                                     </div>
                                 </div>
