@@ -13,8 +13,18 @@ class AccountController extends Controller
 {
     public function dashboard(Request $req)
     {
-        $policyHolder = SForcePolicy::fetchWithCertificates(Auth::user()->salesforce_id);
-        return view('dashboard')->with('policyHolder', $policyHolder);
+        $policyHolder = SForcePolicy::fetchLoggedInUserWithCertificates();
+        return view('account.customer.dashboard')->with('policyHolder', $policyHolder);
+    }
+
+    public function updatePolicyHolderInformation(Request $req)
+    {
+        $data = $req->except(['_token', 'Prop_Mgt_Co_Email__c']);
+        $user = Auth::user();
+
+        $updateResult = SForcePolicy::updateByID($user->salesforce_id, $data);
+
+        return redirect()->back();
     }
 
 }

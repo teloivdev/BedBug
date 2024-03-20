@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
     @if (!$policyHolder->Is_Company_Info_Set__c)
-        @include('account.components.policyHolderUpdateForm')
+        @include('account.customer.components.policyHolderUpdateForm')
     @elseif (!$policyHolder->Is_Exterminators_Set__c)
-        @include('account.components.exterminatorUpdateForm')
+        @include('account.customer.components.exterminatorUpdateForm')
     @endif
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
